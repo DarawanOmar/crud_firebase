@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>crud_firebase</title>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCxM-aZzyLIqECUTxJNXv1cy-UxlS3CQ40",
+        authDomain: "crud-flutter-c32fd.firebaseapp.com",
+        projectId: "crud-flutter-c32fd",
+        storageBucket: "crud-flutter-c32fd.firebasestorage.app",
+        messagingSenderId: "740521665639",
+        appId: "1:740521665639:web:944d4cf579939c5f7ba0c2",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/flutter_service_worker.js");
+        });
+      }
+    </script>
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
+</html>
