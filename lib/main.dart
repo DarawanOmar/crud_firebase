@@ -11,13 +11,12 @@ void main() async {
     // Initialize Firebase for both Android and Web
     await Firebase.initializeApp(
       options: FirebaseOptions(
-        apiKey: "AIzaSyCxM-aZzyLIqECUTxJNXv1cy-UxlS3CQ40",
-        authDomain: "crud-flutter-c32fd.firebaseapp.com",
-        projectId: "crud-flutter-c32fd",
-        storageBucket: "crud-flutter-c32fd.firebasestorage.app",
-        messagingSenderId: "740521665639",
-        appId: "1:740521665639:web:944d4cf579939c5f7ba0c2",
-      ),
+          apiKey: "AIzaSyC_uJsBVu9QFJgOQDMLvSCP0CUf2gzFX2s",
+          authDomain: "crud-app-d4681.firebaseapp.com",
+          projectId: "crud-app-d4681",
+          storageBucket: "crud-app-d4681.firebasestorage.app",
+          messagingSenderId: "369765830523",
+          appId: "1:369765830523:web:226a3f6c632be16b3c77de"),
     );
     runApp(const MyApp(isFirebaseConnected: true));
   } catch (e) {
