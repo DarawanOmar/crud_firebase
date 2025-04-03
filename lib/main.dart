@@ -4,6 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:curd_firebase/screens/task-list.dart';
 import './screens/add-task.dart';
 
+// aa
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Required for async main function
 
