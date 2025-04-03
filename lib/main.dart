@@ -1,22 +1,26 @@
-import 'package:curd_firebase/screens/task-list.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:curd_firebase/screens/task-list.dart';
 import './screens/add-task.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized(); // Required for async main function
 
   try {
-    // Initialize Firebase for both Android and Web
+    // Load the .env file
+    await dotenv.load(fileName: ".env");
+
+    // Initialize Firebase
     await Firebase.initializeApp(
       options: FirebaseOptions(
-          apiKey: "AIzaSyC_uJsBVu9QFJgOQDMLvSCP0CUf2gzFX2s",
-          authDomain: "crud-app-d4681.firebaseapp.com",
-          projectId: "crud-app-d4681",
-          storageBucket: "crud-app-d4681.firebasestorage.app",
-          messagingSenderId: "369765830523",
-          appId: "1:369765830523:web:226a3f6c632be16b3c77de"),
+        apiKey: dotenv.env['API_KEY']!,
+        authDomain: dotenv.env['AUTH_DOMAIN']!,
+        projectId: dotenv.env['PROJECT_ID']!,
+        storageBucket: dotenv.env['STORAGE_BUCKET']!,
+        messagingSenderId: dotenv.env['MESSAGING_SENDER_ID']!,
+        appId: dotenv.env['APP_ID']!,
+      ),
     );
     runApp(const MyApp(isFirebaseConnected: true));
   } catch (e) {
